@@ -19,7 +19,6 @@ env:
   # Use docker.io for Docker Hub if empty
   GH_REGISTRY: ghcr.io
   DH_REGISTRY: docker.io
-  DH_NAMESPACE: jack60612
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
@@ -79,7 +78,7 @@ jobs:
         with:
           images: |
             ${{ env.GH_REGISTRY }}/${{ env.IMAGE_NAME }}
-            ${{ env.DH_NAMESPACE }}/${{ env.IMAGE_NAME }}
+            ${{ env.DH_REGISTRY }}/${{ env.IMAGE_NAME }}
           
 
       # Build and push Docker image with Buildx (don't push on PR)
