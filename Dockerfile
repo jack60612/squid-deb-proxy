@@ -1,11 +1,11 @@
-FROM ubuntu:trusty
-MAINTAINER Panagiotis Moustafellos <pmoust@gmail.com>
+FROM debian:latest
+MAINTAINER Jack Nelson <jack@jacknelson.xyz>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      squid-deb-proxy squid-deb-proxy-client avahi-daemon avahi-utils && \
+      squid-deb-proxy avahi-daemon avahi-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     ln -sf /cachedir /var/cache/squid-deb-proxy && \
