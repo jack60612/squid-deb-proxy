@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:latest
 MAINTAINER Jack Nelson <jack@jacknelson.xyz>
 
 ENV DEBIAN_FRONTEND noninteractive
