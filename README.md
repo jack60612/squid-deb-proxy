@@ -1,21 +1,30 @@
 squid-deb-proxy Docker container
 ================================
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/pmoust/squid-deb-proxy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-squid-deb-proxy provides an easy wrapper over squid3 to enable package proxy caching for your organisation/LAN.
+squid-deb-proxy provides an easy wrapper over squid to enable package proxy caching for your organisation/LAN.
 
 This Docker container image allows most (if not all) non-routeable LAN subnets and caches from sources found under `extra-sources.acl`
+
+You can also mount a volume to the source address acl directories to add your own sources and ip ranges.
 
 Usage:
 
 * On Server / Host:
 
-`docker run --name proxy --rm -v /path/to/cachedir:/cachedir -p PORT:8000 pmoust/squid-deb-proxy &`
+```bash
+docker run --name proxy --rm -v /path/to/cachedir:/var/cache/squid-deb-proxy  -v /path/to/allowed-networks:/etc/squid-deb-proxy/allowed-networks-src.acl.d /
+ -v /path/to/cached-sources:/etc/squid-deb-proxy/mirror-dstdomain.acl.d -p PORT:8000 jack60612/squid-deb-proxy 
+```
 
 * On a node
 
-```
-apt-get install squid-deb-proxy-client
+```bash
+apt install squid-deb-proxy-client
 echo 'Acquire::http::Proxy "http://HOST_IP:PORT";' > /etc/apt/apt.conf.d/30autoproxy
+```
+
+or
+
+```bash
+apt install auto-apt-proxy
 ```

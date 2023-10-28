@@ -1,2 +1,2 @@
 container:
-	docker build -t pmoust/squid-deb-proxy .
+	docker build -t jack60612/squid-deb-proxy .
