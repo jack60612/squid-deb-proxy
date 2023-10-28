@@ -2,7 +2,7 @@
 
 CONFIG=/etc/squid-deb-proxy/squid-deb-proxy.conf
 CACHE_DIR=/var/cache/squid-deb-proxy
-SQUID_ARGS="-s -YC -f $CONFIG"
+SQUID_ARGS="-YCNd 1 -f $CONFIG"
 
 if [ "$ENABLE_AVAHI" ]; then 
     # Advertise the availability of the cache by starting avahi-daemon
