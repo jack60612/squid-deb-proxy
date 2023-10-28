@@ -37,4 +37,4 @@ EXPOSE 5353/udp
 LABEL SERVICE_NAME="squid-deb-proxy"
 LABEL SERVICE_TAGS="apt-proxy,apt-cache"
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["exec /start.sh"]
