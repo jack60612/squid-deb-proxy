@@ -23,6 +23,6 @@ start () {
         ulimit -n 65535
         cd "$CACHE_DIR" || exit
         # shellcheck disable=SC2086
-        /usr/sbin/squid $SQUID_ARGS
+        exec /usr/sbin/squid $SQUID_ARGS
 }
 start 
