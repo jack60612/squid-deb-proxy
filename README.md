@@ -2,6 +2,7 @@ squid-deb-proxy Docker container
 ================================
 
 squid-deb-proxy provides an easy wrapper over squid to enable package proxy caching for your organisation/LAN.
+[Readme](https://bazaar.launchpad.net/~squid-deb-proxy-developers/squid-deb-proxy/trunk/view/head:/README.md)
 
 This Docker container image allows most (if not all) non-routeable LAN subnets and caches from sources found under `extra-sources.acl`
 
