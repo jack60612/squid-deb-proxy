@@ -26,6 +26,7 @@ cdn.debian.net                          # Debian
 http.debian.net                         # Debian
 # Ubuntu already part of container
 .raspberrypi.org                       # Raspbian
+.raspberrypi.com                       # Raspbian
 .raspian.org                           # Raspbian
 mirrors.syringanetworks.net            # Raspbian
 mirror.umd.edu                         # Raspbian
